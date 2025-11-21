@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1>Find Your Next Adventure</h1>
+    <p>Search for flights and hotels at the best prices</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow h-100">
+            <div class="card-header bg-info text-white">
+                <h5>✈️ Search Flights</h5>
+            </div>
+            <div class="card-body">
+                <form action="/search" method="POST">
+                    <input type="hidden" name="type" value="flight">
+                    
+                    <label>Source City</label>
+                    <input type="text" name="source" class="form-control mb-2" placeholder="e.g. Delhi">
+                    
+                    <label>Destination City</label>
+                    <input type="text" name="destination" class="form-control mb-2" placeholder="e.g. Mumbai">
+                    
+                    <button type="submit" class="btn btn-info text-white w-100 mt-2">Find Flights</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow h-100">
+            <div class="card-header bg-warning text-dark">
+                <h5>🏨 Search Hotels</h5>
+            </div>
+            <div class="card-body">
+                <form action="/search" method="POST">
+                    <input type="hidden" name="type" value="hotel">
+                    
+                    <label>Location</label>
+                    <input type="text" name="location" class="form-control mb-2" placeholder="e.g. Mumbai">
+                    
+                    <button type="submit" class="btn btn-warning w-100 mt-2">Find Hotels</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if results %}
+<div class="mt-5">
+    <h3>Search Results</h3>
+    <hr>
+    <div class="row">
+        {% for item in results %}
+        <div class="col-md-4 mb-3">
+            <div class="card border-primary">
+                <div class="card-body">
+                    {% if item['airline'] %}
+                        <h5>{{ item['airline'] }}</h5>
+                        <p>{{ item['source'] }} ➝ {{ item['destination'] }}</p>
+                        <p class="fw-bold">₹{{ item['price'] }}</p>
+                        <form action="/book" method="POST">
+                            <input type="hidden" name="type" value="flight">
+                            <input type="hidden" name="id" value="{{ item['id'] }}">
+                            <button class="btn btn-sm btn-primary">Book Now</button>
+                        </form>
+                    {% else %}
+                        <h5>{{ item['name'] }}</h5>
+                        <p>📍 {{ item['location'] }} | ⭐ {{ item['rating'] }}</p>
+                        <p class="fw-bold">₹{{ item['price'] }} / night</p>
+                        <form action="/book" method="POST">
+                            <input type="hidden" name="type" value="hotel">
+                            <input type="hidden" name="id" value="{{ item['id'] }}">
+                            <button class="btn btn-sm btn-warning">Book Room</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

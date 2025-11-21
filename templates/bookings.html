@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">My Travel History</h2>
+    
+    {% if bookings %}
+        <table class="table table-striped shadow">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Type</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                <tr>
+                    <td>#{{ booking['id'] }}</td>
+                    <td>
+                        {% if booking['type'] == 'flight' %} ✈️ Flight
+                        {% else %} 🏨 Hotel {% endif %}
+                    </td>
+                    <td>{{ booking['details'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="alert alert-warning">You haven't booked anything yet!</div>
+        <a href="/" class="btn btn-primary">Go Search Flights</a>
+    {% endif %}
+</div>
+{% endblock %}
