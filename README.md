@@ -43,7 +43,6 @@ If you want to run this project locally, follow these steps:
     Open your browser and go to: `http://127.0.0.1:5000`
 
 ## 📸 Screenshots
-*(You can drag and drop your screenshots here when editing on GitHub to show off your UI!)*
 
 ## 📝 Learning Outcomes
 This project demonstrates understanding of:
