@@ -43,11 +43,11 @@ If you want to run this project locally, follow these steps:
     Open your browser and go to: `http://127.0.0.1:5000`
 
 ## 📸 Screenshots
+<img width="1919" height="874" alt="Screenshot 2025-11-21 214456" src="https://github.com/user-attachments/assets/ac30fff8-9e5f-4027-900d-e1bd2e29297a" />
 <img width="1896" height="872" alt="Screenshot 2025-11-21 214243" src="https://github.com/user-attachments/assets/3ba7a3e8-253c-488a-943e-7235b8d05f7d" />
 <img width="1919" height="876" alt="Screenshot 2025-11-21 214221" src="https://github.com/user-attachments/assets/f7510ea3-e3f3-4c51-8407-82910c88699a" />
-<img width="1919" height="874" alt="Screenshot 2025-11-21 214456" src="https://github.com/user-attachments/assets/ac30fff8-9e5f-4027-900d-e1bd2e29297a" />
-<img width="1919" height="874" alt="Screenshot 2025-11-21 214326" src="https://github.com/user-attachments/assets/ba8dabb3-432f-47e6-8b74-72aea6346f1d" />
 <img width="1899" height="873" alt="Screenshot 2025-11-21 214303" src="https://github.com/user-attachments/assets/f0c89769-9773-4d46-842e-87819d11724e" />
+<img width="1919" height="874" alt="Screenshot 2025-11-21 214326" src="https://github.com/user-attachments/assets/ba8dabb3-432f-47e6-8b74-72aea6346f1d" />
 
 ## 📝 Learning Outcomes
 This project demonstrates understanding of:
